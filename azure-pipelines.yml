@@ -1,3 +1,5 @@
+pr:
+- develop
 
 trigger:
 - main
