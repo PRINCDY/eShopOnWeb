@@ -12,12 +12,6 @@ pool:
     clean: all
 
 stages:
-- stage: CI
-  jobs:
-  - job: CIWork
-    steps:
-    - script: "Do CI work"
-
 - stage: Test
   jobs:
   - job: TestWork
