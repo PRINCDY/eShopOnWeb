@@ -14,8 +14,8 @@ pool:
 stages:
 - stage: Test
   jobs:
-  - job: TestWork
+  - job: CIWork
     steps:
-    - script: "Do test work"
+    - script: "Do CI work"
 
 
