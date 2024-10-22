@@ -17,5 +17,9 @@ stages:
   - job: CIWork
     steps:
     - script: "Do CI work"
+    
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'build'
 
 
