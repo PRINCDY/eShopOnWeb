@@ -1,36 +1,19 @@
-pr:
-- develop
-
 trigger:
- branches:
-   include:
-     - develop
-  
+- main
+
 pool:
   vmImage: ubuntu-latest
-  workspace:
-    clean: all
 
 stages:
-- stage: Test
+- stage: CI
   jobs:
   - job: CIWork
     steps:
     - script: "Do CI work"
-    
-    - task: DotNetCoreCLI@2
-      inputs:
-        command: 'build'
-      
-    - task: NuGetToolInstaller@1
-      inputs:
-          versionSpec: 
-        
-    - task: Ant@1
-      inputs:
-        buildFile: 'build.xml'
-        options: 
-        publishJUnitResults: true
-        testResultsFiles: '**/TEST-*.xml'
-        javaHomeOption: 'JDKVersion'
+
+- stage: Test
+  jobs:
+  - job: TestWork
+    steps:
+    - script: "Do test work"
     
