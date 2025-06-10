@@ -10,6 +10,13 @@ pool:
   vmImage: ubuntu-latest
   workspace:
     clean: all
+
+stages:
+- stage: Test
+  jobs:
+  - job: CIWork
+    steps:
+    - script: "Do CI work"
     
     - task: DotNetCoreCLI@2
       inputs:
